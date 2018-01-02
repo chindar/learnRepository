@@ -1,0 +1,24 @@
+server:
+  port: 8086
+spring:
+  application:
+    name: config-server
+  cloud:
+    config:
+      server:
+        git:
+          # 配置git仓库的地址
+          uri: https://github.com/wcd19901010/Springcloud/
+          # git仓库地址下的相对地址，可以配置多个, 用[,]分割。
+          search-paths: config-server
+          # git仓库的账号
+          username:
+          # git仓库的密码
+          password:
+      # git仓库的分支
+      label: master
+# 必须在注册中心注册eureka client。若不注册, 会被服务器拒绝链接。
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8080/eureka/   ## 注册中心eureka地址

@@ -1,0 +1,9 @@
+spring:
+  application:
+    # 此名称必须和远程仓库中的配置文件名称保持一致, 例如: config-client-pro, config-client-test, config-client-dev等
+    # 服务名称后面连接的后缀对应profile属性
+    name: config-client
+  cloud:
+    config:
+      uri: http://localhost:8086/
+      profile: pro

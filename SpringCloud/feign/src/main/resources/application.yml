@@ -1,0 +1,14 @@
+server:
+  port: 8084
+spring:
+  application:
+    name: service-feign
+eureka:
+  client:
+    service-url:
+      # eureka 服务器发布地址
+      defaultZone: http://localhost:8080/eureka/
+# 由于feign内置熔断器机制, 只是默认是关闭的, 需要此配置开启熔断机制
+feign:
+  hystrix:
+    enabled: true
